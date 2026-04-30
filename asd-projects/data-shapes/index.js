@@ -43,12 +43,12 @@ $(document).ready(function () {
    dataShapes.push(shape)
   // TODO 2: add a new property to all data shapes
   for (var i = 0; i < dataShapes.length; i++){
-    let shape = dataShapes[i];
+    let currentShape = dataShapes[i];
     if (shape.color === "red") {
-      shape.goodBehavior = "bounce";
+      currentShape.goodBehavior = "bounce";
     } else if (shape.color === "blue") {
-      shape.goodBehavior = "blink";
-    } else {shape.goodBehavior = "spin";}
+      currentShape.goodBehavior = "blink";
+    } else {currentShape.goodBehavior = "spin";}
   }
 
   // TODO 3-a: add a function that handles the static display type
