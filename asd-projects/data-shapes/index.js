@@ -35,20 +35,18 @@ $(document).ready(function () {
   /////////////////////////////////////////////////
 
   // TODO 1: create a new shape object and add it to the array
-  var shape = 
-   {color : "blue", 
-   shape : "circle",
-   repeat: 3
-   } 
-   dataShapes.push(shape)
+  var shape = { color: "blue", shape: "circle", repeat: 3 };
+  dataShapes.push(shape);
   // TODO 2: add a new property to all data shapes
-  for (var i = 0; i < dataShapes.length; i++){
+  for (var i = 0; i < dataShapes.length; i++) {
     let currentShape = dataShapes[i];
     if (shape.color === "red") {
       currentShape.goodBehavior = "bounce";
     } else if (shape.color === "blue") {
       currentShape.goodBehavior = "blink";
-    } else {currentShape.goodBehavior = "spin";}
+    } else {
+      currentShape.goodBehavior = "spin";
+    }
   }
 
   // TODO 3-a: add a function that handles the static display type
@@ -81,13 +79,13 @@ $(document).ready(function () {
 
   function goodDisplay() {
     // TODO 4-b: call your handleGood function
-    shape = dataShapes[currentIndex];
-    handleGood(shape.color, shape.shape, shape.repeat);
+    let currentShape = dataShapes[currentIndex];
+    handleGood(currentShape.color, currentShape.shape, currentShape.repeat);
   }
 
   function badDisplay() {
     // TODO 5-b: call your handleBad function
-    shape = dataShapes[currentIndex];
+   let currentShape = dataShapes[currentIndex];
     handleBad(shape, shape.repeat);
   }
 
@@ -150,7 +148,7 @@ $(document).ready(function () {
     $("#shape").css("top", "150px");
     $("#shape").css("transform", "rotate(0deg)");
     $("#shape").html(
-      `<p>${shapeData.color}</p> <p>${shapeData.shape}</p> <p>${shapeData.repeat}x${shapeData.repeat}</p> <p>${shapeData.goodBehavior}</p>`
+      `<p>${shapeData.color}</p> <p>${shapeData.shape}</p> <p>${shapeData.repeat}x${shapeData.repeat}</p> <p>${shapeData.goodBehavior}</p>`,
     );
 
     $("#info-bar").text(`Current index: ${currentIndex}`);
